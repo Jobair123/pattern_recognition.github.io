@@ -107,7 +107,7 @@ clear all
 close all
 A = imread('b.png');
 D = imread('all_data.png');
-
+%convert color rgb to bw
 A_Gray = rgb2gray(A);
 D_Gray = rgb2gray(D);
 
@@ -123,6 +123,7 @@ figure(), imshow(bw_template);
 
 a = bw_template;
 b = bw_candidate;
+% using normalize cross co-relation
 cross=normxcorr2(b,a);
 imshow(cross)
 figure,surf(cross),shading flat
